@@ -1,0 +1,24 @@
+[
+  {
+    "description": "Glickman 2012 paper worked example: player 1500/200/0.06 vs three opponents in one rating period",
+    "params": { "glickoTau": 0.5, "glickoTolerance": 1e-6 },
+    "player": { "rating": 1500, "rd": 200, "vol": 0.06 },
+    "opponents": [
+      { "rating": 1400, "rd": 30, "vol": 0.06 },
+      { "rating": 1550, "rd": 100, "vol": 0.06 },
+      { "rating": 1700, "rd": 300, "vol": 0.06 }
+    ],
+    "scores": [1.0, 0.0, 0.0],
+    "expected": { "rating": 1464.06, "rd": 151.52, "vol": 0.05999 },
+    "tolerance": 0.01
+  },
+  {
+    "description": "Inactive player (no opponents): rating stays, RD grows via volatility inflation",
+    "params": { "glickoTau": 0.5, "glickoTolerance": 1e-6 },
+    "player": { "rating": 1500, "rd": 200, "vol": 0.06 },
+    "opponents": [],
+    "scores": [],
+    "expected": { "rating": 1500.0, "rd": 200.27, "vol": 0.06 },
+    "tolerance": 0.1
+  }
+]

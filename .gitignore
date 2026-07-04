@@ -1,0 +1,15 @@
+# Test & build artifacts
+*.out
+*.test
+coverage.txt
+/dist/
+
+# Go workspace files (kept local, not published)
+go.work
+go.work.sum
+
+# Generated fuzz corpus / crash reproducers (hand-authored seeds use f.Add)
+/testdata/fuzz/
+
+# Editor/OS
+.DS_Store
